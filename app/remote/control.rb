@@ -13,8 +13,8 @@ module Remote
       @connection.transmit key, is_long
     end
 
-    def key_transmitted(status_code)
-      puts "\t[OK -- #{status_code}]"
+    def key_transmitted(result)
+      puts "\t[OK -- Success? #{result.success?}]"
     end
 
     def key_transmission_error(exception)

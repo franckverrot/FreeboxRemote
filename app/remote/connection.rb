@@ -10,8 +10,8 @@ module Remote
       begin
         machine = "hd1"
         query = "http://#{machine}.freebox.fr/pub/remote_control?code=#{@code}&key=#{key}#{long_press ? '&long=true' : ''}"
-        BW::HTTP.get(query) do |response|
-          delegate.key_transmitted(response)
+        AFMotion::HTTP.get(query) do |result|
+          delegate.key_transmitted(result)
         end
       rescue Exception => e
         delegate.key_transmission_error(e)

@@ -8,8 +8,6 @@ begin
 rescue LoadError
 end
 
-require 'bubble-wrap/all'
-
 Motion::Project::App.setup do |app|
   app.name = 'Freebox Remote Control'
 end
